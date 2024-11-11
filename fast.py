@@ -44,7 +44,7 @@ def search_by_ticker(data,ticker):
    l = list(data.values())
    for entry in l :
         test = entry.get('ticker')
-        if test == ticker :
+        if test == ticker.upper() :
           cik = entry.get('cik_str')
           d = {}
           d['ticker']=ticker

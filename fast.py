@@ -51,7 +51,7 @@ def search_by_ticker(data,ticker):
           d['CIK'] = cik
           d['name'] = entry.get('title')
           return d
-   return 'None Found'
+   return {'CIK':'None Found'}
 
 @app.get("/{ticker}")
 async def read_root(ticker=''):

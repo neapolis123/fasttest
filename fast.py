@@ -48,7 +48,7 @@ def search_by_ticker(data,ticker):
           cik = entry.get('cik_str')
           d = {}
           d['ticker']=ticker.upper()
-          d['CIK'] = cik
+          d['CIK'] = str(cik).zfill(10)
           d['name'] = entry.get('title')
           return d
    return {'CIK':'None Found'}

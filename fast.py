@@ -50,6 +50,7 @@ def search_by_ticker(data,ticker):
           d['ticker']=ticker.upper()
           d['CIK'] = str(cik).zfill(10)
           d['name'] = entry.get('title')
+          d['link'] = f'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={str(cik).zfill(10)}&owner=exclude&count=200'
           return d
    return {'CIK':'None Found'}
 

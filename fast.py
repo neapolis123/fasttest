@@ -12,16 +12,13 @@ def fetch_data():
     url = "https://www.sec.gov/files/company_tickers.json"
     payload = {}
     headers = {
-      'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8,fr;q=0.7',
-      'priority': 'u=0, i',
-      'sec-ch-ua': '"Chromium";v="130", "Google Chrome";v="130", "Not?A_Brand";v="99"',
-      'upgrade-insecure-requests': '1',
-      'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'accept-language': 'en-US,en;q=0.6',
+    'sec-ch-ua': '"Brave";v="135", "Not-A.Brand";v="8", "Chromium";v="135"',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36',
     }
-
     response = requests.request("GET", url, headers=headers, data=payload)
     return response.json()
-
+    
 origins = ["*"]
 
 app.add_middleware(
